@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(node_modules/magic.css/dist/magic.css);
 
 :root{
     --color-background: #09090c;
@@ -44,11 +45,18 @@ nav{
     top: 0;
 }
 
-nav .logo i{
-    font-size: 20px;
-    padding: 8px;
+nav .logo{
     border-radius: 50%;
     background: var(--color-highlight);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .logo img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
 }
 
 nav .nav-links{
@@ -81,25 +89,19 @@ nav .nav-links a::before{
     opacity: 0;
 }
 
-nav .nav-links a:hover::before{
-    animation: underlineAnimation 0.3s ease-in-out forwards;
-}
-
 nav .nav-links a:hover{
     color: var(--color-highlight);
     transform: translateY(-2px);
 }
 
-@keyframes underlineAnimation {
-    0% {
-        right: 100%;
-        opacity: 0;
-    }
-    100% {
-        right: 0;
-        opacity: 1;
-    }
+nav .nav-links a:hover::before{
+    animation: underlineIn 0.3s ease-in-out forwards;
 }
+
+nav .nav-links a:not(:hover)::before {
+    animation: underlineOut 0.3s ease-in-out forwards;
+}
+
 
 nav .login{
     display: flex;
@@ -493,6 +495,144 @@ footer .copyright p{
 footer .copyright{
     width: 100%;
 }
+
+
+.popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.popup .popup-content{
+    background: var(--color-dark);
+    color: var(--color-light);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 32px 0 32px 0;
+    width: 400px;
+    height: 500px;
+}
+
+
+.popup .popup-content i{
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 200px;
+    right: 12px;
+    padding: 8px;
+    border-radius: 50%;
+    color: var(--color-highlight);
+    transition: all 0.3s ease;
+}
+
+.popup .popup-content i:hover{
+    background: var(--color-highlight);
+    color: var(--color-dark);
+}
+
+.popup .popup-content .popup-info{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px 0;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.popup .popup-content .popup-info h2{
+    font-size: 26px;
+    color: var(--color-light-variant);
+}
+
+.popup .popup-content .popup-info p{
+    font-size: 16px;
+    text-align: justify;
+    color: var(--color-light);
+}
+
+.popup .popup-content .popup-info button{
+    align-self: flex-start;
+    width: 80%;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--color-light-variant);
+    font-size: 18px;
+    font-weight: 400;
+    background: var(--color-dark-variant-2);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+
+.popup .popup-content .popup-info button::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: var(--color-highlight);
+    color: var(--color-dark);
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+.popup .popup-content .popup-info button:hover{
+    color: var(--color-dark);
+}
+
+.popup .popup-content .popup-info button:hover::before{
+    animation: underlineIn 0.6s ease-in-out forwards;
+}
+
+.popup .popup-content .popup-info button:not(:hover)::before {
+    animation: underlineOut 0.6s ease-in-out forwards;
+}
+
+
+.popup .popup-content  img {
+    width: 100%;
+    background: var(--color-highlight);
+    height: 250px;
+    object-fit: cover;
+    border-radius: 32px 0 0 0;
+}
+
+
+@keyframes underlineIn {
+    0% {
+        right: 100%;
+        opacity: 0;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes underlineOut {
+    0% {
+        right: 0;
+        opacity: 1;
+    }
+    100% {
+        right: 100%;
+        opacity: 0;
+    }
+}
+
 
 @media screen and (max-width: 992px){
 

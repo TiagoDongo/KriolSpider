@@ -1,0 +1,30 @@
+{
+    "Learning": {
+        "title": "Learning Resources",
+        "text": "Discover more about arachnids, their ecological importance and the fundamental role they play in balancing ecosystems",
+        "image": "assets/learning.jpg",
+        "buttonText": "Explore Learning",
+        "buttonLink": "#learning"
+    },
+    "KriolSpider": {
+        "title": "KriolSpider",
+        "text": "We are a community dedicated to researching and documenting arachnids in Cape Verde",
+        "image": "assets/KriolSpider-Logo.png",
+        "buttonText": "Learn More",
+        "buttonLink": "#kriolspider"
+    },
+    "Cape Verde": {
+        "title": "About Cape Verde",
+        "text": "Discover more about Cape Verde, an archipelago of singular beauty, its rich biodiversity, vibrant culture and the importance of its unique ecosystems",
+        "image": "assets/CV flag.jpg",
+        "buttonText": "See More",
+        "buttonLink": "#capeverde"
+    },
+    "About Us": {
+        "title": "Meet Our Team",
+        "text": "Meet the team behind KriolSpider and our goals for scientific research and arachnid conservation in Cape Verd",
+        "image": "assets/Team.jpg",
+        "buttonText": "Meet the Team",
+        "buttonLink": "#aboutus"
+    }
+}
